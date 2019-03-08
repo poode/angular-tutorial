@@ -1,0 +1,28 @@
+
+<div class="container">
+  <div class="row">
+      <div class="">
+          <div class="panel panel-primary">
+              <div class="panel-heading">
+
+                    <app-button buttonName="Post List"></app-button>
+
+                  <span class="glyphicon glyphicon-list"></span>Sortable Lists
+              </div>
+              <div class="panel-body">
+                  <ul class="list-group">
+                      <li *ngFor="let post of postList" class="list-group-item">
+                          <div class="checkbox">
+                              <input type="checkbox" id="checkbox" />
+                              <a (click)="getPost(post)" [routerLink]="['/one-post']" [queryParams]="{id: post.id} ">
+                                <label for="checkbox">
+                                  {{ post.body }}
+                              </label>
+                              </a>
+                          </div>
+                      </li>
+                  </ul>
+          </div>
+      </div>
+  </div>
+</div>
